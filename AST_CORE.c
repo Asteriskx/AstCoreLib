@@ -64,7 +64,7 @@ static void string(const char *fmt, const char *c)
     free(val);
 }
 
-// コピーコンストラクタ
+// コピーコンストラクタ版
 static void string(const string &s)
 {
     char[] val;
@@ -75,4 +75,7 @@ static void string(const string &s)
     m_data = val[m_size + 1];
 
     strcpy(m_data, s.m_data);
+
+    // リソース解放
+    free(val);
 }
